@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fceee9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #d86f52;
+}
+
+/* Filters and Search */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #d86f52;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #b34d33;
+}
+
+#searchInput {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 250px;
+  font-size: 1rem;
+}
+
+/* Gallery Grid */
+.gallery-container {
+  padding: 10px 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: grayscale(15%);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1.1);
+}
+
+/* Lightbox Overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #d86f52;
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+.lightbox-btn {
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  margin: 0 30px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.lightbox-btn:hover {
+  color: #ffb9a4;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
